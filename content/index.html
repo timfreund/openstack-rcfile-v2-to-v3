@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="custom.css">
+    <script src="openrcToV3.js"></script>
+
+    <title>Convert Keystone v2.0 RC files to v3 multi-domain RC files</title>
+  </head>
+
+  <body role="document" onload="populateDefaultDomain();">
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>Convert Keystone v2.0 RC files to v3 multi-domain RC files</h1>
+        <p>If your OpenStack environment uses multi-domain authentication, your
+          old RC file configured for Keystone's v2.0 API won't
+          work. Authorization failures are the most common sign that you're
+          using an outdated v2.0 configuration.
+        </p>
+        <p>This page takes your RC file and your authentication domain and
+          transforms the RC file into a Keystone v3 compliant file.</p>
+      </div>
+      <form>
+        <h2>Your project domain</h2>
+        <input type="text" id="domain"/>
+        <h2>Original openrc file</h2>
+        <textarea cols="80" rows="20" id="original" onchange="openrcToV3();"></textarea>
+        <h2>v3 openrc file</h2>
+        <textarea cols="80" rows="20" id="v3"></textarea>
+      </form>
+    </div>
+  </body>
+</html>
